@@ -1,16 +1,21 @@
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import TaskList from "./pages/TaskList"
+import AddTask from "./pages/AddTask"
+import DefaultLayout from "./layouts/DefaultLayout"
 
 function App() {
 
   return (
     <>
-     <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <h1>Ciao</h1>
-        </div>
-      </div>
-     </div>
+     <BrowserRouter>
+      <Routes>
+        <Route element={<DefaultLayout/>}>
+          <Route path="/" element={<TaskList/>}/>
+          <Route path="/taskList" element={<TaskList/>}/>
+          <Route path="/addTask" element={<AddTask/>}/>
+        </Route>
+      </Routes>
+     </BrowserRouter>
     </>
   )
 }

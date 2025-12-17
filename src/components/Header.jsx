@@ -7,8 +7,8 @@ const Header = () => {
         <div className="container-fluid">
             <div className="row">
                 <nav className='navbar-header'>
-                    <NavLink to="/" activeClassName="active">Lista Tasks</NavLink>
-                    <NavLink to="/addTask" activeClassName="active">Aggiungi Task</NavLink>
+                    <NavLink to="/" >Lista Tasks</NavLink>
+                    <NavLink to="/addTask" >Aggiungi Task</NavLink>
                 </nav>
             </div>
         </div>

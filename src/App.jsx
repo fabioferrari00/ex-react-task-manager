@@ -11,7 +11,6 @@ function App() {
       <Routes>
         <Route element={<DefaultLayout/>}>
           <Route path="/" element={<TaskList/>}/>
-          <Route path="/taskList" element={<TaskList/>}/>
           <Route path="/addTask" element={<AddTask/>}/>
         </Route>
       </Routes>

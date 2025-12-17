@@ -3,15 +3,13 @@ import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header className='bg-warning'>
+    <header>
         <div className="container-fluid">
             <div className="row">
-                <div className="col-6 text-center">
-                    <NavLink to="/taskList">Lista Tasks</NavLink>
-                </div>
-                <div className="col-6 text-center">
-                    <NavLink to="/addTask">Aggiungi Task</NavLink>
-                </div>
+                <nav className='navbar-header'>
+                    <NavLink to="/" activeClassName="active">Lista Tasks</NavLink>
+                    <NavLink to="/addTask" activeClassName="active">Aggiungi Task</NavLink>
+                </nav>
             </div>
         </div>
     </header>

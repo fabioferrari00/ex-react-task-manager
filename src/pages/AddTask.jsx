@@ -2,8 +2,12 @@ import React from 'react'
 
 const AddTask = () => {
   return (
-    <div>
-      <h1>Add task</h1>
+    <div className="container">
+        <div className="row">
+            <div className="col-12">
+                <h1>Aggiungi Tasks</h1>
+            </div>
+        </div>
     </div>
   )
 }

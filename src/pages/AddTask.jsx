@@ -1,8 +1,11 @@
-import { useState, useRef, useMemo } from "react"
+import { useState, useRef, useMemo, useContext } from "react"
+import { GlobalContext } from "../contexts/GlobalContext";
 const symbols = `"!@#$%^&*()-_=+[]{}|;:'\\",.<>?/~`
 
 
 const AddTask = () => {
+
+  const { addTask } = useContext(GlobalContext);
 
   const [taskTitle, setTaskTitle] = useState("");
   const descriptionRef = useRef();
@@ -18,7 +21,7 @@ const AddTask = () => {
     return "";
   }, [taskTitle]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     if (taskNameError) {
@@ -30,7 +33,15 @@ const AddTask = () => {
       status: statusRef.current.value,
     }
 
-    console.log("Aggiungi task: ", newTask)
+    try {
+      await addTask(newTask)
+      alert("Task creata")
+      setTaskTitle("");
+      descriptionRef.current.value = "";
+      statusRef.current.value = "";
+    } catch (err) {
+      alert(err.message);
+    }
 
   }
 

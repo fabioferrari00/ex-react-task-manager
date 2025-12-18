@@ -1,19 +1,50 @@
-header{
+header {
     background-color: pink;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.navbar-header{
+.navbar-header {
     display: flex;
     justify-content: space-around;
 }
 
-.navbar-header a{
+.navbar-header a {
     text-decoration: none;
     color: white;
 }
-.navbar-header a:active{
+
+.navbar-header a:active {
     text-decoration: none;
     color: black;
+}
+
+td.todo {
+    background-color: hsl(0, 100%, 69%);
+}
+
+td.doing {
+    background-color: hsl(48, 100%, 50%);
+}
+
+td.done {
+    background-color: hsl(101, 100%, 38%);
+}
+
+table {
+    border: 1px solid pink;
+    width: 100%;
+}
+
+thead tr th {
+    border: 1px solid pink;
+    padding: 10px;
+    text-align: center;
+}
+
+tbody tr td {
+    border: 1px solid pink;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

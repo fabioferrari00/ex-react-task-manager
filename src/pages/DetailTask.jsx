@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { GlobalContext } from "../contexts/GlobalContext"
 
 const DetailTask = () => {
 
     const {id} = useParams()
-    const {tasks} = useContext(GlobalContext)
+    const navigate = useNavigate() 
+    const {tasks, removeTask} = useContext(GlobalContext)
 
     const task = tasks.find(item => item.id === parseInt(id))
 
@@ -13,22 +14,29 @@ const DetailTask = () => {
         return (<span className="text-center fs-2" style={{color:'red'}}>Task non trovata</span>)
     }
 
-    const handleDelete = (id) => {
-        console.log(`Task con id ${task.id} eliminata con successo`)
+    const handleDelete = async () => {
+        try{
+            await removeTask(task.id);
+            console.log(`Task con id ${id} eliminata con successo`)
+            navigate("/")
+        }catch(err){
+            alert(err.message)
+        }
     }
 
   return (
     <div className="card text-center">
         <h1 className="text-center my-3">DETTAGLIO TASK:</h1>
-        <div className="card-header">
+        <div className="card-header fs-2">
             {task.title}
         </div>
         <div className="card-body">
             <p className="card-text"><strong>Descrizione: </strong>{task.description}</p>
-            <button onClick={handleDelete} className="btn btn-danger">Elimina</button>
+            <p className="text-center"><strong>Stato: </strong>{task.status}</p>
+            <button onClick={handleDelete} className="btn btn-danger">Elimina task</button>
         </div>
         <div className="card-footer text-body-secondary">
-            {new Date(task.createdAt).toLocaleDateString()}
+            <strong>Data di creazione: </strong>{new Date(task.createdAt).toLocaleDateString()}
         </div>
     </div>
   )

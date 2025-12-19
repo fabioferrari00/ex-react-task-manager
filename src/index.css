@@ -31,6 +31,16 @@ td.done {
     background-color: hsl(101, 100%, 38%);
 }
 
+td a{
+    text-decoration: none;
+    color: black;
+}
+
+td a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 table {
     border: 1px solid pink;
     width: 100%;

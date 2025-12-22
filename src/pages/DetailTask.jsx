@@ -40,14 +40,21 @@ const DetailTask = () => {
     }
 
     return (
-        <div className="card text-center">
-            <h1 className="text-center my-3">DETTAGLIO TASK:</h1>
-            <div className="card-header fs-2">
-                {task.title}
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
+                    <h1 className="text-center py-3">DETTAGLIO TASK:</h1>
+                </div>
             </div>
-            <div className="card-body">
-                <p className="card-text"><strong>Descrizione: </strong>{task.description}</p>
-                <p className="text-center"><strong>Stato: </strong>{task.status}</p>
+            <div className="col-12 text-center mb-3">
+                <strong>Task:</strong> {task.title}
+            </div>
+            <div className="col-12 text-center mb-3">
+                <p><strong>Descrizione: </strong>{task.description}</p>
+                <p><strong>Stato: </strong>{task.status}</p>
+                <div className="col-12 text-center mb-3">
+                    <strong>Data di creazione: </strong>{new Date(task.createdAt).toLocaleDateString()}
+                </div>
                 <button onClick={() => setShowModal(true)} className="btn btn-danger me-3">Elimina task</button>
                 <button onClick={() => setShowEditModal(true)} className="btn btn-warning">Modifica task</button>
                 <Modal
@@ -65,9 +72,6 @@ const DetailTask = () => {
                     onSave={handleUpdate}
 
                 />
-            </div>
-            <div className="card-footer text-body-secondary">
-                <strong>Data di creazione: </strong>{new Date(task.createdAt).toLocaleDateString()}
             </div>
         </div>
     )

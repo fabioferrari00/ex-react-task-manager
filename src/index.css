@@ -1,62 +1,75 @@
 header {
-    background-color: pink;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  background-color: rgb(48, 87, 0);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+main {
+  background-color: rgb(195, 255, 191);
+  height: 100vh;
 }
 
 .navbar-header {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .navbar-header a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .navbar-header a:active {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 td.todo {
-    background-color: hsl(0, 100%, 69%);
+  background-color: hsl(0, 100%, 69%);
 }
 
 td.doing {
-    background-color: hsl(48, 100%, 50%);
+  background-color: hsl(48, 100%, 50%);
 }
 
 td.done {
-    background-color: hsl(101, 100%, 38%);
+  background-color: hsl(101, 100%, 38%);
 }
 
-td a{
-    text-decoration: none;
-    color: black;
+td a {
+  text-decoration: none;
+  color: black;
 }
 
-td a:hover{
-    text-decoration: underline;
-    cursor: pointer;
+td a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 table {
-    border: 1px solid pink;
-    width: 100%;
+  width: 100%;
 }
 
 thead tr th {
-    border: 1px solid pink;
-    padding: 10px;
-    text-align: center;
+  background-color: rgb(48, 87, 0);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+thead tr th:hover {
+  background-color: rgb(30, 54, 0);
 }
 
 tbody tr td {
-    border: 1px solid pink;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  border: rgb(48, 87, 0) 1px solid;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+tbody tr td a .task-title:hover {
+  background-color: rgb(136, 244, 129);
 }
 
 /* Overlay */
